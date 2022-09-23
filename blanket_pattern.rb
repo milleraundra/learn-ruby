@@ -1,3 +1,5 @@
+#!/usr/bin/env ruby
+
 pattern = "~~**~~//..//~~**~~_-_-_"
 
 row_count = 100
