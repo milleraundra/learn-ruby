@@ -13,18 +13,14 @@ end
 def convert_word(word)
     vowels = ['a', 'e', 'i', 'o', 'u']
     word.downcase!
-    if vowels.include?(word[0])
+    word_array = word.split('')
+    vowel_index =word_array.index { |x| vowels.include?(x)}
+    if vowel_index == 0 
         word << 'ay'
-    elsif !vowels.include?(word[1])
-        first_letters = word[0..1]
-        word.slice! first_letters
-        word << first_letters + 'ay'
-    else
-        first_letter = word[0]
-        word.slice! first_letter
-        word << first_letter + 'ay'
+    else 
+        move_letters = word.slice! word[0..(vowel_index - 1)]
+        word << move_letters + 'ay'
     end
-    word
 end
 
 puts pig_latin("Say something I'm giving up on you")
