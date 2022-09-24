@@ -18,7 +18,7 @@ def convert_word(word)
     if vowel_index == 0 
         word << 'ay'
     else 
-        move_letters = word.slice! word[0..(vowel_index - 1)]
+        move_letters = word.slice! word[0...vowel_index]
         word << move_letters + 'ay'
     end
 end
