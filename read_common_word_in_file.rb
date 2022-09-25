@@ -17,4 +17,4 @@ def find_common_word_in_file(file)
 
 end
 
-puts find_common_word_in_file("file.txt")
+puts find_common_word_in_file("pg2009.txt")
