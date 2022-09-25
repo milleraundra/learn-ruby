@@ -1,11 +1,9 @@
 #!/usr/bin/env ruby
 
 def find_common_word_in_file(file)
-    file = File.open(file)
+    final_hash = {}
 
-    file_data = file.readlines.map{|x| x.downcase.gsub(/[^\w\s]/, '')}.map{|x| x.chomp + ' '}
-    final_hash = {};
-    file_data.each do |line|
+    File.readlines(file).map{|x| x.downcase.gsub(/[^\w\s]/, '')}.map{|x| x.chomp + ' '}.each do |line|
         word_array = line.split(' ')
         word_array.each do |word|
             if !final_hash[word]
